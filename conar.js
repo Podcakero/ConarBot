@@ -1,3 +1,4 @@
+const id = require('./id.js');
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
@@ -18,4 +19,4 @@ client.on('guildMemberAdd', member => {
 	channel.send(`${member}`, rules);
 });
 
-client.login('NTc1Nzg5MTQyNDkxOTIyNDYz.XRgXDA.s6B4hP1xZMtTA1Pl2pIus0WCkYk');
+client.login(id.id);
