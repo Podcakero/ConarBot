@@ -5,4 +5,15 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.login('your-token-goes-here');
+// Create an event listener for new guild members
+client.on('guildMemberAdd', member => {
+    // Send the message to a designated channel on a server:
+    const channel = member.guild.channels.find(ch => ch.name === 'general');
+    // Do nothing if the channel wasn't found on this server
+    if (!channel) 
+        return;
+    // Send the message, mentioning the member
+    channel.send(`${member} https://cdn.discordapp.com/attachments/524075147783569429/594707295204671508/welcome_to_yo_MAMA.jpg`);
+  });
+
+client.login('NTc1Nzg5MTQyNDkxOTIyNDYz.XRgXDA.s6B4hP1xZMtTA1Pl2pIus0WCkYk');
